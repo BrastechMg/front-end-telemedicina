@@ -1,0 +1,51 @@
+<section class="create-edit-product__container">
+    <app-fast-loader></app-fast-loader>
+    <div class="create-edit-product__title-container">
+        <div class="create-edit-product__title-wrapper">
+            <h1 class="create-edit-product__title">
+                {{ pageTitle }}
+            </h1>
+        </div>
+    </div>
+
+    <form [formGroup]="productForm" class="create-edit-product__wrapper">
+        <div class="create-edit-product__input-wrapper">
+            <h2>Upload da logo</h2>
+
+            <label class="create-edit-product__file-label" for="upload-logo">
+                <span class="material-symbols-outlined">cloud_upload</span>
+                <span *ngIf="pathLogo == ''">Upload</span>
+                <span *ngIf="pathLogo != ''">{{ pathLogo }}</span>
+            </label>
+
+            <input 
+                (change)="showFileName($event)" 
+                formControlName="logoPath" 
+                class="create-edit-product__file-input" 
+                type="file" 
+                name="upload-logo" 
+                id="upload-logo"
+            >
+        </div>
+
+        <div class="create-edit-product__input-wrapper">
+            <h2>Insira um nome</h2>
+
+            <input 
+                formControlName="name" 
+                class="create-edit-product__name-input" 
+                type="text" 
+                placeholder="Nome do produto"
+            >
+        </div>
+    </form>
+
+    <div class="create-edit-product__btn-save-wrapper">
+        <button 
+            (click)="saveProduct()" 
+            class="create-edit-product__btn-save"
+        >
+            Salvar
+        </button>
+    </div>
+</section>

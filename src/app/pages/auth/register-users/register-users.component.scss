@@ -1,0 +1,102 @@
+@import "../../../../styles";
+
+.login__container {
+  min-height: 100vh;
+  background: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  .login__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .login__title {
+      color: $secondary-color;
+      font-weight: 700;
+      font-size: 1.5rem;
+      max-width: 270px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .login__form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      gap: 1rem;
+      max-width: 270px;
+      width: 100%;
+
+      .login__inputPassoword-wrapper {
+        position: relative;
+
+        .login__showPassword {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          cursor: pointer;
+
+          .material-symbols-outlined {
+            color: white;
+            font-size: 15px;
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+          }
+        }
+      }
+
+      .login__span-recoveryPassword {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+        text-decoration: underline;
+        align-self: flex-end;
+      }
+
+      app-button {
+        margin: 1rem auto;
+        width: 100%;
+      }
+    }
+
+    .login__span-createAcount {
+      font-size: 0.7rem;
+      color: white;
+      margin-top: 1rem;
+
+      span {
+        font-weight: 800;
+        color: $secondary-color;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.login__form-login {
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-bottom: 2px solid white;
+  width: 100%;
+  outline: none;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  appearance: none; /* Remove default styling for select */
+}
+
+.login__form-login option {
+  background-color: $primary-color;
+  color: white;
+}

@@ -1,0 +1,19 @@
+<div id="{{ formControlName }}-container">
+  <label for="{{ formControlName }}-input" id="{{ formControlName }}-label">{{
+    label
+  }}</label>
+  <input
+    id="{{ formControlName }}-input"
+    type="{{ type }}"
+    [placeholder]="placeholder"
+    (input)="input($event.target)"
+    [(ngModel)]="value"
+    [ngClass]="class"
+    mask="{{mask}}"
+    (blur)="onblur()"
+    [value]="inputValue"
+    (keydown)="onKeyDown()"
+  />
+  <small id="{{ formControlName }}-error_message" class="form-text text-muted"
+  *ngIf="errorMessage" class="error text-danger">{{ errorMessage }}</small>
+</div>

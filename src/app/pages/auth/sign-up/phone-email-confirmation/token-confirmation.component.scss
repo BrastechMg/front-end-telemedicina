@@ -1,0 +1,118 @@
+@import '../../../../../styles';
+
+.recover__container{
+    min-height: 100vh;
+    background: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.recover__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recover__form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1.5rem;
+    max-width: 270px;
+    width: 100%;
+}
+
+.recover__wrapper label span{
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    font-size: 20px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.checked{
+    color: $secondary-color;
+}
+
+
+.recover__radio-wrapper input[type=radio]{
+    display: none;
+}
+
+
+app-button{
+    margin: .5rem auto;
+}
+
+.recover__btn-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/**/
+
+
+.signup__title {
+    margin-left: 2.6rem;
+    color: $secondary-color;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+.text__check {
+    flex-direction: column;
+}
+
+.text__check-title {
+    font-size: .9rem;
+    text-align: center;
+}
+
+.text__check-p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #222222;
+}
+
+
+.text__check-p {
+    margin: 0;
+}
+
+.text__check-p .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+    color: black;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.form__buttons {
+  display: flex;  
+}
+
+.form__email-article {
+    color: $secondary-color;
+    border: none;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: .8rem;
+    max-width: 270px;
+    width: 100%;
+    text-align: center;
+}
+
+
+

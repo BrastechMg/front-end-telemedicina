@@ -1,0 +1,98 @@
+@import '../../../../styles';
+
+.company-contact__container{
+    min-height: 100vh;
+    background: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    .company-contact__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .company-contact__title{
+            color: $secondary-color;
+            font-weight: 700;
+            line-height: 1.7rem;
+            font-size: 1rem;
+            max-width: 670px;
+            width: 100%;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+
+            .material-symbols-outlined{
+                color: black;
+            }
+        }
+        
+        .company-contact__logo{
+            width: 50%;
+        }
+        
+        .company-contact__form{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 670px;
+            width: 100%;
+
+            .company-contact-form-two-col{
+                display: flex;
+                width: 100%;
+                gap: 2rem;
+
+                @media screen and (max-width: 520px) {
+                    flex-direction: column;
+                }
+            
+                app-input{
+                    width: 100%;
+                }
+            }
+
+            .company-contact__select-wrapper{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                flex: 1;
+            }
+
+            .company-contact__select{
+                background-color: transparent;
+                border: none;
+                color: white;
+                border-bottom: 2px solid white;
+                flex: 1;
+                outline: none;
+                cursor: pointer;
+            
+                *{
+                    color: black;
+                }
+            }
+
+            .company-contact__form-message-label{
+                display: flex;
+                flex-direction: column;
+                color: white;
+            
+                .company-contact__form-textarea{
+                    border-radius: 10px;
+                    border: none;
+                    outline: none;
+                    padding: 0.5rem;
+                }
+            }
+
+            app-button{
+                margin: 0 auto;
+            }
+        } 
+    }
+}
+
+
+

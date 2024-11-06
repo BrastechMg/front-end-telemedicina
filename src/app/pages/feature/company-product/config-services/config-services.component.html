@@ -1,0 +1,82 @@
+<section class="config-services__container">
+    <app-fast-loader></app-fast-loader>
+    <div class="add-benefities__title-container">
+        <div class="add-benefities__title-wrapper">
+            <h1 class="add-benefities__title">{{ pageTitle }}</h1>
+        </div>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item d-flex align-items-center">
+            <h2>Marque os serviços que deseja usar.</h2>
+        </li>
+        <li class="list-group-item d-flex flex-column">
+            <div class="list-payment-wrapper d-flex justify-content-between align-items-center">
+                <div class="list-description-wrapper">
+                    <h3>Método de pagamento Asaas API</h3>
+                    <p>
+                        O Asaas é uma fintech que oferece soluções para automatizar as atividades burocráticas das empresas.
+                        Em 2021, foi autorizada pelo Banco Central a atuar como a 31ª instituição de pagamento do Brasil.
+                        Fundado pelos irmãos Piero Contezini e Diego Contezini, o Asaas nasceu em Joinville e hoje atende o Brasil inteiro.
+                    </p>
+                </div>
+                <div class="list-togle-wrapper">
+                    <h3>Não usar/Usar</h3>
+                    <div class="checkbox">
+                        <input (click)="paymentCollapse.toggle()"
+                        [attr.aria-expanded]="!isPaymentCollapsed" id="check-asaas" type="checkbox">
+                        <label for="check-asaas"></label>
+                    </div>
+                </div>
+            </div>
+            <div #paymentCollapse="ngbCollapse" [(ngbCollapse)]="isPaymentCollapsed">
+                <div class="paymentCollapse">
+                    <h4>Informe os dados de usuário Asaas</h4>
+                    <div class="paymentCollapse__login">
+                        <input type="text" placeholder="Login">
+                        <input type="text" placeholder="Senha">
+                    </div>
+                    <div class="paymentCollapse__methods">
+                        <h4>Escolha os métodos de pagamento</h4>
+                        <div class="paymentCollapse__methods-wrapper">
+                            <div>
+                                <input type="checkbox" name="" id="pix">
+                                <label for="pix">Pix</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="" id="creditCard">
+                                <label for="creditCard">Cartão de Crédito</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="" id="boleto">
+                                <label for="boleto">Boleto</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="" id="debitCard">
+                                <label for="debitCard">Cartão de Débito</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="list-description-wrapper">
+                <h3>Liveness</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, aliquam laudantium. Porro est deserunt hic nihil eligendi minima, inventore ipsum unde quibusdam eius magnam asperiores, mollitia totam sint minus nisi.</p>
+            </div>
+            <div class="list-togle-wrapper">
+                <h3>Não usar/Usar</h3>
+                <div class="checkbox">
+                    <input id="check-liveness" type="checkbox">
+                    <label for="check-liveness"></label>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-end align-items-center">
+            <button (click)="saveSettings()" type="button" class="btn btn-primary">Salvar</button>
+        </li>
+    </ul>
+</section>
+

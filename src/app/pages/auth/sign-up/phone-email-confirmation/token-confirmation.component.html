@@ -1,0 +1,80 @@
+
+<section class="recover__container">
+    <div class="recover__wrapper">
+        <img class="default__logo" [src]="logoPath" alt="Logo Cartão Saúde Ouro">
+        <h1 class="default__title" *ngIf="pathOfValidation == 'phoneToken'">Cadastrar <br>Telefone.</h1>
+        <h1 class="default__title" *ngIf="pathOfValidation == 'emailToken'">Cadastrar <br>E-mail</h1>
+        <form *ngIf="pathOfValidation == 'phoneToken'" class="recover__form" [formGroup]="phoneTokenForm" (ngSubmit)="submitNumber()">
+            <app-input
+                [class]="'default__input'"
+                placeholder="Insira seu Celular"
+                formControlName="phoneNumber"
+                [type]="'text'"
+                mask="(00) 0 0000-0000"  
+                [errorMessage]="errorMessage ? errorMessage : ''"
+            >
+            </app-input>
+            <app-button
+                type="submit"
+                label="RECEBER TOKEN"
+                [class]="'btn primary-btn'"  
+            >
+            </app-button>  
+            <button type="click" class="form__email-article">Já Possuo o Token</button>
+     
+        </form>
+        <form *ngIf="pathOfValidation == 'insertToken'" class="recover__form"  [formGroup]="recoverToken" (ngSubmit)="onSubmitToken()">
+            <app-input
+                [class]="'default__input'"
+                placeholder="INSIRA O TOKEN"
+                [type]="'text'"  
+                formControlName="token"
+                [errorMessage]="errorMessageToken ? errorMessageToken : ''"
+            >
+            </app-input>
+
+           <div class="recover__btn-wrapper">
+                <app-button
+                    type="submit"
+                    label="Validar"
+                    [class]="'btn primary-btn'"  
+                >
+                </app-button>
+                <app-button
+                    type="button"
+                    label=" {{timeLeft != 0 ? timeLeft : ''}} Reenviar Token"
+                    [isDisabled]="isDisabledResendBtn"
+                    [class]="'btn primary-btn'"  
+                    (click)="resendToken()"
+                >
+                </app-button>
+           </div>
+        </form>
+        
+        <form *ngIf="pathOfValidation == 'emailToken'" class="recover__form" [formGroup]="emailForm" (ngSubmit)="onSubmitEmail()">
+            <app-input
+                [class]="'default__input'"
+                placeholder="Insira seu E-mail"
+                formControlName="email"
+                [type]="'email'"  
+                [errorMessage]="errorMessage ? errorMessage : ''"
+            >
+            </app-input>
+            <div class="recover__btn-wrapper">
+                <app-button
+                    type="submit"
+                    label="Continuar"
+                    [class]="'btn primary-btn'"  
+                >
+                </app-button>
+                <!-- <app-button
+                    type="button"
+                    label=" {{timeLeft}} segundos para validar"
+                    [class]="'btn primary-btn'"  
+                    (click)="onSubmitEmail()"
+                >
+                </app-button> -->
+           </div>
+        </form>
+    </div>
+</section>

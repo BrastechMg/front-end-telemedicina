@@ -1,0 +1,29 @@
+@import '../../../../../../../styles';
+
+.book-appointment__title-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+
+    @media screen and (max-width: $third-breakpoint) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .book-appointment__title-wrapper{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .book-appointment__logo {
+            color: $primary-color;
+            font-size: 3rem;
+        }
+        
+        .book-appointment__title{
+            font-size: 2rem;
+            color: $primary-text;
+        }
+    }  
+}

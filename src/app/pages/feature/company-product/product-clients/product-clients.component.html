@@ -1,0 +1,56 @@
+<app-slow-loader></app-slow-loader>
+<section class="product-clients__container">
+  <div class="product-clients__title-container">
+    <div class="product-clients__title-wrapper">
+        <div class="product-clients__logo-wrapper">
+        </div>
+        <h1 class="product-clients__title">Editar clientes {{ companyProduct ? companyProduct.name : '' }}</h1>
+    </div>
+  </div>
+
+  <div class="product-clients__btn-wrapper">
+    <button class="btn btn-primary" (click)="updateClients()">Atualizar clientes</button>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Data de importação</th>
+          <th scope="col">Status</th>
+          <th scope="col">Total de clientes</th>
+          <th scope="col">Clientes inseridos</th>
+          <th scope="col">Clientes removidos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr [hidden]="csvList.length != 0">
+          <td class="text-center" colspan="7">Você ainda não tem nenhum csv cadastrado no produto!</td>
+        </tr>
+        <tr *ngFor="let csvItem of paginatedCsvItems">
+          <th scope="row">{{ csvItem.id }}</th>
+          <td>{{ csvItem.name }}</td>
+          <td>{{ csvItem.creationDate }}</td>
+          <td>{{ csvItem.status }}</td>
+          <td>{{ csvItem.amountCustomers }}</td>
+          <td>{{ csvItem.amountInsertedCustomers }}</td>
+          <td>{{ csvItem.amountRemovedCustomers }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+
+  <app-pagination 
+    [hidden]="csvList.length == 0"
+    [totalItems]="csvList.length" 
+    [itemsPerPage]="itemsPerPage" 
+    [currentPage]="currentPage" 
+    (pageChanged)="onPageChanged($event)">
+  </app-pagination>
+</section>
+
+

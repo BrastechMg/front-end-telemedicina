@@ -1,0 +1,30 @@
+<section class="telemedicina__container">
+    <div class="telemedicina__title-container" >
+        <div class="telemedicina__title-wrapper">
+            <h1 class="telemedicina__title">Telemedicina</h1>
+        </div>
+    </div>
+    <div class="telemedicina__cards-wrapper">
+        <app-button
+            class="fancy-button"
+            type="button"
+            label="AGENDAR CONSULTA"
+            (click)="router.navigate(['/feature/book'])"
+        >
+        </app-button>
+        <app-button
+            class="fancy-button"
+            type="button"
+            label="CONSULTAR MEUS ATENDIMENTOS"
+            (click)="router.navigate(['/feature/appointments'])"
+        >
+        </app-button>
+        <app-button
+            class="fancy-button"
+            type="button"
+            label="RECUPERAR RECEITAS / PRESCRIÇÕES"
+            (click)="router.navigate(['/feature/recover-prescriptions'])"
+        >
+        </app-button>
+    </div> 
+</section>

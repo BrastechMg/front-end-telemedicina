@@ -1,0 +1,17 @@
+<section class="generalist__container">
+    <app-fast-loader></app-fast-loader>
+    <div class="generalist__title-container">
+        <div class="generalist__title-wrapper">
+            <h1 class="generalist__title">Agendar Data e Hora</h1>
+        </div>
+    </div>
+    <main class="generalist__wrapper">
+        <h2 class="generalist-wrapper-title">Selecione um dia e horário disponível</h2>
+         <div class="generalist__cards-wrapper">
+            <div *ngIf="schedulePath=='Schedule'">
+                <app-schedule [dateObj]="dateObj" [scheduleDayAndHour]="scheduleInfo" [specialtyId]="1"  [SpecialtyDay]=1></app-schedule>
+            </div>
+        </div> 
+    </main>
+</section>
+

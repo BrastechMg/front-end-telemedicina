@@ -1,0 +1,99 @@
+@import '../../../styles';
+
+.btn:disabled{
+    cursor: default;
+}
+
+.primary-btn{
+    min-width: 180px;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: $primary-text;
+    background-color: $secondary-color;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+
+    &:hover, &:focus{
+        color: $secondary-color;
+        background-color: transparent;
+        border: 2px solid $secondary-color;
+    }
+
+    &:disabled{
+        cursor: default;
+    }
+}
+
+.primary-btn-signup {
+    min-width: 180px;
+    padding: .5rem 1rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: $secondary-color;
+    background-color: transparent; 
+    border-radius: 2rem;
+    border: 2px solid $secondary-color;
+
+    &:hover{
+        color: $primary-text;
+        background-color: $secondary-color; 
+    }
+}
+
+
+.primary-btn-create{
+    background-color: $primary-color;
+    color: white;
+
+    &:hover{
+        color: $primary-color;
+        background-color: transparent;
+        border: 1px solid $primary-color;
+    }
+}
+
+.schedule-button {
+    min-width: 180px;
+    padding: .5rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $primary-white;
+    background-color: $primary-color;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+
+    &:hover{
+        color: $primary-white;
+        background-color: $primary-color;
+        box-shadow: 10px 10px #a09c9c;
+    }
+}
+
+
+.fancy-button {
+    padding: 1.3rem 2rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.226);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+        background-color: $primary-color;
+        box-shadow: 0px 15px 20px  $primary-color;
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+     }
+}

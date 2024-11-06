@@ -1,0 +1,17 @@
+<div class="insurance-card-container">
+    <img class="insurance-card-image" alt="Card Image" [src]="coverImg">
+    <div class="insurance-card-content">
+        <h2 class="insurance-card-title">{{ title }}</h2>
+        <p class="insurance-card-description">
+            <ng-content></ng-content>
+        </p>
+        <div class="insurance-card-actions">
+            <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span (click)="router.navigate([navigateLink])" class="button-text">Ver mais</span>
+            </button>
+        </div>
+    </div>
+</div>

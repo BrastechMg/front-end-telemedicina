@@ -1,0 +1,45 @@
+.appointment-details__container{
+    display: flex;
+    flex-direction: column;
+    
+    h1{
+        font-size: 1.5rem;
+    }
+
+    .close{
+        background: transparent;
+        border: none;
+        font-size: 2rem;
+    }
+
+    .appointiment-details__patient-wrapper,
+    .appointiment-details__doctor-wrapper,
+    .appointiment-details__appointment-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: .5rem;
+        padding: 1rem;
+
+        h2{
+            margin: 0 auto;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+            padding: 0;
+
+            li{
+
+                span{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

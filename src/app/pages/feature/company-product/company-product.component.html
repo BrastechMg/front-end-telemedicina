@@ -1,0 +1,32 @@
+<section class="company-product__container">
+    <app-fast-loader></app-fast-loader>
+    <div class="company-product__title-container">
+        <div class="company-product__title-wrapper">
+            <span class="company-product__logo material-symbols-outlined">inventory_2</span>
+            <h1 class="company-product__title">Meus Produtos</h1>
+        </div>
+        <app-button 
+            [label]="'Criar novo produto'"
+            [class]="'primary-btn-create'"
+            (click)="router.navigate(['/feature/company/products/create/config-services'])"
+        >
+        </app-button>
+    </div>
+    
+    <div class="company-product__cards-wrapper">
+        <ng-container *ngIf="companyProducts != []">
+            <app-benefit-card  *ngFor="let product of companyProducts"
+                [logoImg]="'http://localhost:4200/assets/logo-saude-ouro.png'"
+                [name]="product.name"
+                [path]="'feature/company/products/'+product.id"
+            >
+            </app-benefit-card>
+        </ng-container>
+
+        <div class="company-product__not-product-wrapper" *ngIf="companyProducts.length == 0">
+            <span>Você ainda não tem nenhum produto criado!</span>
+            <span (click)="router.navigate(['/feature/company/products/create/config-services'])" >Clique aqui para criar um novo produto!</span>
+        </div>
+    </div> 
+</section>
+  

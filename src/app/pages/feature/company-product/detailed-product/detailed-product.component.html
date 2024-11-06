@@ -1,0 +1,115 @@
+<section class="detailed-product__container">
+  <app-fast-loader></app-fast-loader>
+    <div class="detailed-product__title-container">
+        <div class="detailed-product__title-wrapper">
+            <div class="detailed-product__logo-wrapper">
+                <img 
+                  [src]="pageLogo" 
+                  [alt]="'Logo do produto'"
+                >
+            </div>
+            <h1 class="detailed-product__title">{{ pageTitle }}</h1>
+        </div>
+    </div>
+
+    <div class="detailed-product__details-wrapper">
+       <div class="detailed-product__details">
+
+        <div *ngIf="companyProduct" class="detailed-product__info">
+          <span>Nome: <span>{{ companyProduct.name }}</span></span>
+          <span>Tipo de cartão: <span>{{ companyProduct.cardType }}</span></span>
+          <span>Preço do produto: <span>R${{ companyProduct.price }}</span></span>
+        </div>
+
+        <div *ngIf="companyProduct == null" class="detailed-product__info">
+          <span>Nome: {{ renderedProduct?.name }}</span>
+          <span>Tipo de cartão: {{ renderedProduct?.cardType }}</span>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Benefícios</th>
+                <th scope="col">Preço</th>
+              </tr>
+            </thead>
+
+            <tbody *ngIf="companyProduct != null">
+              <tr *ngFor="let benefit of companyProduct.productBenefits, index as i">
+                <th scope="row">{{ i }}</th>
+                <td>{{ benefit.name }}</td>
+                <td>R$ {{ benefit.price }}</td>
+              </tr>
+
+              <tr>
+                <td class="not-benefit" *ngIf="companyProduct.productBenefits.length == 0" colspan="3">Este produto ainda não tem nenhum benefício cadastrado!</td>
+              </tr>
+            </tbody>
+
+            <tbody *ngIf="companyProduct == null">
+              <ng-container *ngIf="renderedProduct?.benefities != []">
+                <tr *ngFor="let benefit of renderedProduct?.benefities, index as i">
+                  <th scope="row">{{ i }}</th>
+                  <td>{{ benefit.name }}</td>
+                  <td>R$ {{ benefit.price }}</td>
+                </tr>
+              </ng-container>
+              
+              <tr>
+                <td class="not-benefit" *ngIf="renderedProduct?.benefities.length == 0" colspan="3">Este produto ainda não tem nenhum benefício cadastrado!</td>
+              </tr>
+            </tbody>
+
+          </table>
+
+       </div>
+
+       <div class="detailed-product__price">
+            <h6>Custo Total:</h6>
+            <span>R$ {{ getProductPrice() }}</span>
+       </div>
+       
+    </div>
+
+    <form *ngIf="companyProduct == null" class="detailed-product__price-form" [formGroup]="formPrice">
+      <label class="detailed-product__price-label" for="productPrice">
+        Informe o Preço de Venda
+      </label>
+      <input 
+        class="detailed-product__price-input"
+        id="productPrice" 
+        formControlName="productPrice" 
+        type="text"     
+        placeholder="Preço do produto"
+      >
+    </form>
+
+    <div *ngIf="companyProduct != null" class="detailed-product__btn-wrapper">
+        <button 
+          class="detailed-product__btn-edit" 
+          (click)="router.navigate(['/feature/company/products/settings/'+companyProduct.id])"
+        >
+          Editar Produto
+        </button>
+        <button 
+          class="detailed-product__btn-edit" 
+          (click)="router.navigate(['/feature/company/product/'+companyProduct.id+'/clients'])"
+        >
+          Editar clientes
+        </button>
+        <button (click)="deleteProduct()" class="detailed-product__btn-delete">
+          Deletar Produto
+        </button>
+    </div>
+
+    <div *ngIf="companyProduct == null" class="detailed-product__btn-wrapper">
+      <button (click)="cancelProduct()" class="detailed-product__btn-delete">
+        Cancelar
+      </button>
+      <button (click)="createProduct()" class="detailed-product__btn-edit">
+        Criar Produto
+      </button>
+  </div>
+</section>
+

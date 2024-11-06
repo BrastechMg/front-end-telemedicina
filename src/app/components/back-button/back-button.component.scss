@@ -1,0 +1,40 @@
+@import '../../../styles';
+
+button {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    color: #092D29;
+  }
+
+  .returnButton{
+    display: flex;
+    align-items: center;
+  }
+
+  .returnButton p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #092D29;
+  }
+
+  .returnButton i {
+    margin-right: 1.2rem;
+    color: #092D29;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.returnButton button:hover i {
+    transform: scale(1.1);
+    color: #092D29;
+}
+
+  

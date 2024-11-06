@@ -1,0 +1,45 @@
+@import '../../../../../styles';
+
+.add-benefities__container{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    .add-benefities__title-container{
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+    
+        .add-benefities__title-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            .add-benefities__logo {
+                color: $primary-color;
+                font-size: 3rem;
+            }
+            
+            .add-benefities__title{
+                font-size: 2rem;
+                color: $primary-text;
+            }
+        }  
+    }
+
+    .add-benefities__cards-wrapper{
+        width: 100%;
+        height: 100%;
+        padding: 2rem 1rem;
+        gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    } 
+}
+

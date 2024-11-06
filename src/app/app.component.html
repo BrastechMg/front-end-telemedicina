@@ -1,0 +1,5 @@
+<div *ngIf="isLoading" id="preloader" class="pre-loader__container">
+    <div class="pre-loader"></div>
+</div>
+
+<router-outlet *ngIf="!isLoading" (activate)="onActivate($event)"></router-outlet>

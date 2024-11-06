@@ -1,0 +1,89 @@
+<section class="signup__container">
+  <div class="signup__content">
+    <img [src]="logoPath" alt="logo da empresa Cartão Saúde Ouro" />
+
+    <div class="signup__content-form">
+      <h1 class="signup__title">
+        Criar <br />
+        Nova Conta
+      </h1>
+
+      <form
+        action=""
+        class="signup__form"
+        [formGroup]="formSignUp"
+        (ngSubmit)="onSubmit()"
+      >
+        <app-input
+          id=""
+          type="text"
+          placeholder="Nome"
+          class="default__input signup__form-input"
+          formControlName="name"
+          [errorMessage]="isNotSubmited"
+          (input)="onInput()"
+        >
+        </app-input>
+
+        <div>
+          <ul class="row rol-colunm">
+            <li class="col list-unstyled">
+              <app-input
+                id=""
+                type="text"
+                placeholder="CPF"
+                [inputValue]="cpf"
+                class="default__input signup__form-input"
+                formControlName="cpf"
+                [errorMessage]="isNotSubmited"
+                [errorMessage]="cpfValid"
+                (input)="onInput()"
+                mask="000.000.000-00"
+              >
+              </app-input>
+            </li>
+            <li class="col list-unstyled">
+              <app-input
+                id=""
+                type="date"
+                placeholder="Nascimento"
+                class="default__input signup__form-input"
+                formControlName="bornDate"
+                [errorMessage]="isNotSubmited"
+                [errorMessage]="cpfValid"
+                (input)="onInput()"
+              >
+              </app-input>
+            </li>
+          </ul>
+        </div>
+
+        <app-input
+          id=""
+          type="text"
+          placeholder="CPF"
+          [inputValue]="cpf"
+          class="default__input signup__form-input"
+          formControlName="cpf"
+          [errorMessage]="isNotSubmited"
+          [errorMessage]="cpfValid"
+          (input)="onInput()"
+          mask="000.000.000-00"
+        >
+          <!--Aplica mascara de acordo com cpf ou cnpj-->
+        </app-input>
+
+        <app-button
+          type="submit"
+          [label]="btnText"
+          [class]="'btn primary-btn'"
+        ></app-button>
+      </form>
+
+      <p>
+        JÁ POSSUI CONTA?
+        <a class="strong-text" routerLink="/login">FAÇA O LOGIN</a>
+      </p>
+    </div>
+  </div>
+</section>

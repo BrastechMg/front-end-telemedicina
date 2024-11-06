@@ -1,0 +1,98 @@
+@import '../../../../../styles';
+
+.detailed-benefit__container{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    .detailed-benefit__btn-add-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem;
+
+        .detailed-benefit__btn-add, .detailed-benefit__btn-remove{
+            max-width: 200px;
+            width: 100%;
+            height: 50px;
+            background-color: $primary-color;
+            border: 1px solid transparent;
+            border-radius: 50px;
+            font-size: 1rem;
+            color: white;
+    
+            &:hover{
+                border: 1px solid  $primary-color;
+                background-color: transparent;
+                color: $primary-color;
+            }
+        }
+
+        .detailed-benefit__btn-remove{
+            background-color: red;
+            color: white;
+
+            &:hover{
+                border: 1px solid  red;
+                background-color: transparent;
+                color: red;
+            }
+        }
+    }
+
+    .detailed-benefit__title-container{
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+    
+        .detailed-benefit__title-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            .detailed-benefit__logo {
+                color: $primary-color;
+                font-size: 3rem;
+            }
+            
+            .detailed-benefit__title{
+                font-size: 2rem;
+                color: $primary-text;
+                text-transform: capitalize;
+            }
+        }  
+    }
+
+    .detailed-benefit__cards-wrapper{
+        width: 100%;
+        height: 100%;
+        padding: 2rem 1rem;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto;
+
+        .detailed-benefit__img{
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .detailed-benefit__description{
+            max-width: 950px;
+        }
+    } 
+}
+

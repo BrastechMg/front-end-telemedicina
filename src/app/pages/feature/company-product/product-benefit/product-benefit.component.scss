@@ -1,0 +1,93 @@
+@import '../../../../../styles';
+
+.product-benefities__container{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    .product-benefities__btn-add-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .product-benefities__btn-add{
+            max-width: 250px;
+            width: 100%;
+            height: 50px;
+            background-color: $primary-color;
+            border: 1px solid transparent;
+            border-radius: 50px;
+            font-size: 1rem;
+            color: white;
+    
+            &:hover{
+                border: 1px solid  $primary-color;
+                background-color: transparent;
+                color: $primary-color;
+            }
+        }
+    }
+
+    .product-benefities__title-container{
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+    
+        .product-benefities__title-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            .product-benefities__logo {
+                color: $primary-color;
+                font-size: 3rem;
+            }
+            
+            .product-benefities__title{
+                font-size: 2rem;
+                color: $primary-text;
+            }
+        }  
+    }
+    
+    .product-benefities__cards-wrapper{
+        width: 100%;
+        min-height: calc(100vh - 270px);
+        padding: 2rem 1rem;
+        gap: 4rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-y: auto;
+
+        .product-benefities__not-benefit{
+            display: flex;
+            flex-direction: column;
+
+            span{
+                font-size: 1.4rem;
+                text-align: center;
+
+                &:last-child{
+                    color: $primary-color;
+                    text-decoration: underline;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            }
+        }
+    } 
+}
+

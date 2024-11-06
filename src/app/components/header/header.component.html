@@ -1,0 +1,20 @@
+<header class="header__component">
+    <div class="header__wrapper">
+        <ul>
+            <li (click)="functionalityNotCreated()">
+                <span class="material-symbols-outlined">forum</span>
+            </li>
+            <li (click)="functionalityNotCreated()">
+                <span class="material-symbols-outlined">notifications</span>
+            </li>
+        </ul>
+        <div class="header__user-wrapper">
+            <h1>{{ username }}</h1>
+            <span>{{ userRole }}</span>
+        </div>
+        <div class="header__profilePhoto">
+            <img (click)="redirectToProfile()" [src]="picturePath" alt="Foto de Perfil">
+        </div>
+    </div>
+</header>
+

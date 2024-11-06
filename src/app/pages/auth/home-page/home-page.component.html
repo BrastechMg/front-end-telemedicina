@@ -1,0 +1,24 @@
+<section class="home__container">
+    <app-fast-loader></app-fast-loader>
+    <div class="home__content">
+        <div class="logo">
+            <img class="default__logo" [src]="logoPath" alt="Logo Cartão Saúde Ouro">
+        </div>
+        <div class="home__buttons">
+            <form action="" >
+                <app-input
+                placeholder="Insira seu CPF/CNPJ"
+                type="text"
+                mask="CPF_CNPJ"
+                class="default__input signup__form-input home__page-input"
+                #login></app-input>
+            </form>
+            <app-button 
+                class="btn primary-btn"
+                type="button"
+                label="CONTINUAR"
+                (click)="checkClientTypeAndVerify(login)">  
+            </app-button>
+        </div>
+    </div>
+</section>

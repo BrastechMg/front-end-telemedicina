@@ -1,0 +1,10 @@
+<div class="page__container">
+    <app-sidebar></app-sidebar>
+    <div class="page__wrapper">
+        <app-header></app-header>
+        <app-back-button></app-back-button>
+        <main class="main">
+           <router-outlet  (activate)="onActivate($event)"></router-outlet>
+       </main>
+    </div>
+</div>

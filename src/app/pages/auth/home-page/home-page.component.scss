@@ -1,0 +1,37 @@
+@import '../../../../styles';
+
+*{
+    background-color: $primary-color;
+}
+
+//common styles
+.home__container, .home__content,.home__buttons {
+    display: flex;   
+    align-items: center;
+}
+
+.home__content, .home__buttons {
+    flex-direction: column;
+}
+
+.home__container {
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.home__content {
+   margin: auto 0;
+}
+
+.logo {
+    margin: 3rem 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.home__buttons {
+    gap: 1.5rem;
+}
+

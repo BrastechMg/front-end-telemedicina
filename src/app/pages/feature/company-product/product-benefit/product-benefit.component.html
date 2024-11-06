@@ -1,0 +1,71 @@
+<section class="product-benefities__container">
+    <app-fast-loader></app-fast-loader>
+    <div class="product-benefities__title-container">
+        <div class="product-benefities__title-wrapper">
+            <h1 class="product-benefities__title">
+                {{ pageTitle }}
+            </h1>
+        </div>
+    </div>
+
+    <div class="product-benefities__cards-wrapper">
+        <ng-container *ngIf="companyProduct != undefined">
+            <app-benefit-card  
+                *ngFor="let benefit of companyProduct.productBenefits"
+                [benefitLogo]="benefit.logo"
+                [name]="benefit.name"
+                [path]="'/feature/company/products/'+companyProduct.id+'/edit/remove/benefit/'+benefit.id"
+                [description]="benefit.description"
+            >
+            </app-benefit-card>
+
+            <div 
+                class="product-benefities__not-benefit" 
+                *ngIf="companyProduct.productBenefits.length == 0"
+            >
+                <span>
+                    Você ainda não tem nenhum benefício cadastrado no produto!
+                </span>
+                <span (click)="router.navigate([addBenefitNavigate])" >
+                    Clique aqui para cadastrar um novo benefício!
+                </span>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="companyProduct == undefined">
+
+            <ng-container *ngIf="newProduct?.benefits != []">
+                <app-benefit-card  
+                    *ngFor="let benefit of allBenefitsProduct"
+                    [benefitLogo]="benefit.logo"
+                    [name]="benefit.name"
+                    [path]="'/feature/company/products/create/remove/benefit/'+benefit.id"
+                    [description]="benefit.description"
+                >
+                </app-benefit-card>
+            </ng-container>
+
+            <div 
+                class="product-benefities__not-benefit" 
+                *ngIf="newProduct?.benefits.length == 0"
+            >
+                <span>
+                    Você ainda não tem nenhum benefício cadastrado no produto!
+                </span>
+                <span (click)="router.navigate([addBenefitNavigate])">
+                    Clique aqui para cadastrar um novo benefício!
+                </span>
+            </div>
+
+        </ng-container>
+    </div> 
+
+    <div class="product-benefities__btn-add-wrapper">
+        <button (click)="router.navigate([addBenefitNavigate])" class="product-benefities__btn-add">
+            Adicionar novos benefícios
+        </button>
+        <button *ngIf="companyProduct == null" (click)="changeRouteOnClick()" class="product-benefities__btn-add">
+            Salvar
+        </button>
+    </div>
+</section>

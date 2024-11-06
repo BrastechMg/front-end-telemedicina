@@ -1,0 +1,20 @@
+<section *ngIf="userData.role == 'CUSTOMER'" class="dashboard__container">
+    <app-fast-loader></app-fast-loader>
+    <div class="dashboard__title-wrapper">
+      <h4>Meus Benefícios</h4>
+    </div>
+    <div class="dashboard__wrapper">
+        <app-benefit-card *ngFor="let benefit of benefitsList"
+            [benefitLogo]="benefit.logo"
+            [name]="benefit.name"
+            [path]="'/feature/benefit/'+benefit.id"
+            [description]="benefit.description"
+        ></app-benefit-card>
+    </div>
+
+</section>
+
+<section *ngIf="userData.role != 'CUSTOMER'" class="dashboard__container">
+    <div class="dashboard__title-wrapper"></div>
+
+</section>

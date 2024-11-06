@@ -1,0 +1,133 @@
+@import '../../../styles.scss';
+
+.insurance-card-container {
+    width: 20rem;
+    max-height: 410px;
+    height: 100%;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.384);
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .insurance-card-image {
+        width: 100%;
+        height: 10rem;
+        object-fit: cover;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    .insurance-card-content {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        height: calc(100% - 10rem);
+
+        .insurance-card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .insurance-card-description {
+            color: #4a5568;
+            flex-grow: 1;
+        }
+
+        .insurance-card-actions {
+            display: flex;
+            margin-top: auto;
+
+            .learn-more {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                outline: none;
+                border: 0;
+                vertical-align: middle;
+                text-decoration: none;
+                background: transparent;
+                padding: 0;
+                font-size: inherit;
+                font-family: inherit;
+                width: 12rem;
+                height: auto;
+
+                &:hover {
+                    .circle {
+                        width: 100%;
+
+                        .arrow {
+                            background: #fff;
+                            transform: translate(1rem, 0);
+                        }
+                    }
+
+                    .button-text {
+                        color: #fff;
+                    }
+                }
+
+                .circle {
+                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                    position: relative;
+                    display: block;
+                    margin: 0;
+                    width: 3rem;
+                    height: 3rem;
+                    background: $primary-color;
+                    border-radius: 1.625rem;
+
+                    .icon {
+                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        background: #fff;
+                    }
+
+                    .arrow {
+                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                        left: 0.625rem;
+                        width: 1.125rem;
+                        height: 0.125rem;
+                        background: none;
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            top: -0.29rem;
+                            right: 0.0625rem;
+                            width: 0.625rem;
+                            height: 0.625rem;
+                            border-top: 0.125rem solid #fff;
+                            border-right: 0.125rem solid #fff;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+
+                .button-text {
+                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    padding: 0.75rem 0;
+                    margin: 0 0 0 1.85rem;
+                    color: #282936;
+                    font-weight: 700;
+                    line-height: 1.6;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

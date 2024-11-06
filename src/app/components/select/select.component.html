@@ -1,0 +1,14 @@
+<div id="{{ formControlName }}-container" >
+  <label id="{{ formControlName }}-label">{{ label }}</label>
+  <select
+    id="{{ formControlName }}-input"
+    (change)="input($event.target)"
+    [(ngModel)]="value"
+    [ngClass]="class"
+  >
+    <option *ngFor="let option of options" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div>

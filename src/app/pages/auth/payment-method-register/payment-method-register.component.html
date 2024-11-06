@@ -1,0 +1,51 @@
+<main class="payment__container container-fluid">
+    <div class="payment__container-wrap">
+        <img [src]="logoPath" alt="company logo">
+        <div class="payment__form">
+            <div class="">
+                <h4 class="payment__form-title">Cadastre seu Cartão de <br> Crédito </h4>
+            </div>
+            <form action="" class="payment__form-form" [formGroup]="paymentForm" (submit)="validateInputsAndSubmit()">
+                <app-input type="text"
+                [id]="'holderName'"
+                [class]="'default__input'"
+                placeholder="Nome do Titular"
+                [type]="'text'" 
+                [errorMessage]="!nameValid ? 'Nome deve ser preenchido!' : ''" 
+                formControlName="holderName" 
+                ></app-input>       
+                <app-input type="text"
+                [class]="'default__input'"
+                placeholder="N° Cartão de Crédito"
+                [type]="'text'"
+                [errorMessage]="!creditCardValid || !cardNumberLengthValid ? 'Cartão Inválido!' : ''"
+                mask="0000 0000 0000 0000" formControlName="number"
+                ></app-input> 
+                <div class="form-row">
+                        <app-input type="text"
+                        [id]="'CCV'"
+                        [class]="'default__input'"
+                        placeholder="CCV"
+                        [type]="'text'"  
+                        mask="0000" formControlName="ccv"
+                        [errorMessage]="!CCVLengthValid ? 'CVV inválido!' : ''">
+                        </app-input>       
+                        <app-input type="text"
+                        [class]="'default__input'"
+                        placeholder="Data de Vencimento"
+                        [type]="'text'"  
+                        [errorMessage]="!dateValid ? 'Data Inválida!' : ''"
+                        mask="00/00/0000" formControlName="dueDate"></app-input>   
+                </div>      
+                <div class="payment__form-btn">
+                    <app-button
+                                type="submit"
+                                label="ENVIAR"
+                                [class]="'btn primary-btn'"
+                                >
+                    </app-button>
+                </div>
+            </form>        
+        </div>
+    </div>
+</main>

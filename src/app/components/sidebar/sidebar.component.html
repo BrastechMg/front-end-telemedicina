@@ -1,0 +1,85 @@
+<div class="sidebar__container" [ngClass]="{sidebar__hidden: !isExpanded, isHidden: isHidden}">
+    <section [ngClass]="{sidebar__hidden: !isExpanded, isHidden: isHidden}" class="sidebar">
+            <img class="default__logo" [src]="logoPath" alt="Logo Cartão Saúde Ouro">
+            <nav class="sidebar__items-wrapper">
+                <ul>
+                    <li 
+                        (click)="innerWidth < 880 && handleMobileSidebar()" 
+                        (click)="router.navigate(['/feature/dashboard'])" 
+                        class="sidebar__item"
+                    >
+                        <span class="material-symbols-outlined">speed</span>
+                        <span >Home</span>                 
+                    </li>
+                    <li 
+                        *ngIf="userData.role === 'CUSTOMER'" 
+                        (click)="innerWidth < 880 && handleMobileSidebar()" 
+                        (click)="functionalityNotCreated()" 
+                        class="sidebar__item"
+                    >
+                        <span class="material-symbols-outlined">request_quote</span>
+                        <span >Faturas</span>      
+                    </li>
+                    <li 
+                        *ngIf="userData.role === 'CUSTOMER'" 
+                        (click)="innerWidth < 880 && handleMobileSidebar()" 
+                        (click)="functionalityNotCreated()" 
+                        class="sidebar__item"
+                    >
+                        <span class="material-symbols-outlined">receipt_long</span>
+                        <span >Métodos de Pagamento</span>          
+                    </li>
+                    <li 
+                        (click)="innerWidth < 880 && handleMobileSidebar()" 
+                        (click)="router.navigate(['/feature/account'])" 
+                        class="sidebar__item"
+                    >
+                        <span class="material-symbols-outlined">account_circle</span>
+                        <span >Minha Conta</span>
+                    </li>
+                    <li 
+                        *ngIf="userData.role === 'MASTER' || userData.role === 'ADMIN' || userData.role == 'MANAGER'" 
+                        (click)="innerWidth < 880 && handleMobileSidebar()" 
+                        (click)="router.navigate(['/feature/company/products'])" 
+                        class="sidebar__item"
+                    >
+                        <span class="material-symbols-outlined">inventory_2</span>
+                        <span >Meus Produtos</span>  
+                    </li>
+                    <li  *ngIf="userData.role === 'MASTER'" (click)="innerWidth < 880 && handleMobileSidebar()" (click)="router.navigate(['/feature/create-company'])" class="sidebar__item">
+                        <span class="material-symbols-outlined">apartment</span>
+                        <span >Configurar empresas</span>
+                    </li>
+                    <li  *ngIf="userData.role === 'ADMIN' || userData.role === 'MASTER' || userData.role === 'MANAGER'" (click)="innerWidth < 880 && handleMobileSidebar()" (click)="router.navigate(['/feature/configuration-users'])" class="sidebar__item">
+                        <span class="material-symbols-outlined">manage_accounts</span>
+                        <span >Configurar usuários</span>
+                    </li>
+                    <li 
+                        (click)="innerWidth < 880 && handleMobileSidebar()" 
+                        (click)="functionalityNotCreated()" 
+                        class="sidebar__item"
+                    >
+                        <span class="material-symbols-outlined">help</span>
+                        <span >Ajuda</span> 
+                    </li>
+                    <li 
+                        (click)="innerWidth < 880 && handleMobileSidebar()" 
+                        (click)="logOutUser()" 
+                        class="sidebar__item"
+                    >
+                        <span class="material-symbols-outlined">logout</span>
+                        <span >Sair</span>    
+                    </li>
+                </ul>
+            </nav>
+            <button *ngIf="innerWidth < 880" class="sidebar-mobile__btn-close" (click)="handleMobileSidebar()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </section>
+   </div>
+
+    <button *ngIf="innerWidth < 880" class="sidebar-mobile__btn-open" (click)="handleMobileSidebar()">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+
+    

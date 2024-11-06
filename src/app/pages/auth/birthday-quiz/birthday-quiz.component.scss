@@ -1,0 +1,108 @@
+@import '../../../../styles';
+
+*{
+    background-color: $primary-color;
+}
+
+//common styles
+.birthday-quiz__container, .birthday-quiz__content,.birthday-quiz__buttons {
+    display: flex;   
+    align-items: center;
+}
+
+.birthday-quiz__content, .birthday-quiz__buttons {
+    flex-direction: column;
+}
+
+.birthday-quiz__container {
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.birthday-quiz__content {
+   margin: auto 0;
+}
+
+.logo {
+    margin: 3rem 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.birthday-quiz__buttons {
+    gap: 1.5rem;
+}
+
+.radio-group {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      padding: 0.5em;
+      margin-bottom: 0.5em;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: background-color 0.2s, border-color 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #e6e6e6;
+      }
+    }
+
+    .radio-input {
+      position: absolute;
+      opacity: 0;
+    }
+    
+    .radio-input:checked + .radio-label {
+      background-color: #fff3c2;
+      border-color: $secondary-color;
+    }
+    
+    .radio-input:focus + .radio-label {
+      outline: 2px solid $secondary-color;
+    }
+    
+    .radio-inner-circle {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      border: 2px solid #888;
+      border-radius: 50%;
+      margin-right: 0.5em;
+      transition: border-color 0.2s;
+      position: relative;
+    }
+    
+    .radio-label:hover .radio-inner-circle {
+      border-color: #555;
+    }
+    
+    .radio-input:checked + .radio-label .radio-inner-circle {
+      border-color: $secondary-color;
+    }
+    
+    .radio-input:checked + .radio-label .radio-inner-circle::after {
+      content: '';
+      display: block;
+      width: 0.5em;
+      height: 0.5em;
+      background-color: $secondary-color;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  

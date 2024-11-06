@@ -1,0 +1,56 @@
+<section class="login__container">
+  <app-fast-loader></app-fast-loader>
+  <div class="login__wrapper">
+    <img class="default__logo" [src]="logoPath" alt="Logo Cartão Saúde Ouro" />
+    <h1 class="default__title">Olá, {{ name }}!<br />Seja Bem-Vindo.</h1>
+    <form
+      class="login__form"
+      [formGroup]="loginForm"
+      (ngSubmit)="submitLogin()"
+    >
+      <div class="login__inputUser-wrapper">
+        <app-input
+          [class]="'default__input'"
+          placeholder="INSIRA SEU NOME DE USUÁRIO"
+          formControlName="login"
+          [type]="'text'"
+        ></app-input>
+      </div>
+
+      <div class="login__inputPassoword-wrapper">
+        <app-input
+          [class]="'default__input'"
+          placeholder="INSIRA SUA SENHA"
+          formControlName="password"
+          [type]="isPasswordShow ? 'text' : 'password'"
+          [errorMessage]="errorMessagePassword ? errorMessagePassword : null"
+        ></app-input>
+        <label class="login__showPassword" for="handleCheckbox">
+          <span *ngIf="!isPasswordShow" class="material-symbols-outlined">
+            visibility_off
+          </span>
+          <span *ngIf="isPasswordShow" class="material-symbols-outlined">
+            visibility
+          </span>
+          <input
+            id="handleCheckbox"
+            type="checkbox"
+            (click)="handlePasswordView()"
+          />
+        </label>
+      </div>
+
+      <span
+        (click)="router.navigate(['/recover'])"
+        class="login__span-recoveryPassword"
+        >Esqueci minha senha</span
+      >
+      <app-button type="submit" label="LOGIN" [class]="'btn primary-btn'">
+      </app-button>
+    </form>
+    <p class="login__span-createAcount">
+      VOCÊ NÃO POSSUI UMA CONTA?
+      <span (click)="router.navigate(['/signup'])">CRIE AGORA</span>
+    </p>
+  </div>
+</section>

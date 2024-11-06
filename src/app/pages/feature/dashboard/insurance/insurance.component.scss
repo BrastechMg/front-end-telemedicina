@@ -1,0 +1,48 @@
+@import '../../../../../styles.scss';
+
+.insurance__container{
+    padding: 1rem;
+
+    .insurance__title-container{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .insurance__title-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .insurance__logo {
+                color: $primary-color;
+                font-size: 3rem;
+            }
+
+            .insurance__title{
+                font-size: 2rem;
+                color: $primary-text;
+            }
+        }
+    }
+
+    .insurance__cards-wrapper{
+        padding: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 1.5rem;
+    }
+}
+
+.modal {
+  position: absolute;
+  width: 70%;
+  z-index: 99;
+  background-color: aqua;
+}

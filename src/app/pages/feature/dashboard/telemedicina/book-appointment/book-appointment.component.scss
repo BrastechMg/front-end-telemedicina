@@ -1,0 +1,76 @@
+@import '../../../../../../styles';
+
+.book-appointment__container{
+    padding: 1rem;
+
+    .book-appointment__title-container{
+        display: flex;
+        justify-content: space-between;
+    
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .book-appointment__title-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            .book-appointment__logo {
+                color: $primary-color;
+                font-size: 3rem;
+            }
+            
+            .book-appointment__title{
+                font-size: 2rem;
+                color: $primary-text;
+            }
+        }  
+    }
+
+    .book-appointment__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+
+        .book-appointment-wrapper-title {
+            text-align: center;
+            margin-top: 1rem;
+        }
+    
+        .book-appointment__cards-wrapper{
+            width: 100%;
+            height: 93%;
+            padding: 2rem 1rem;
+            gap: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        
+            .book-appointment__btn{
+                flex-basis: 30%;
+                flex-grow: 1;
+                border: none;
+                background-color: $primary-color;
+                font-weight: 700;
+                font-size: 1.2rem;
+                min-width: 150px;
+                height: 100px;
+                border-radius: 10px;
+                cursor: pointer;
+                color: $primary-white;
+                transition: 300ms;
+            
+                &:hover{
+                    -webkit-box-shadow: 10px 10px 30px -11px  $primary-color;
+                    -moz-box-shadow: 10px 10px 30px -11px  $primary-color;
+                    box-shadow: 10px 10px 30px -11px  $primary-color;
+                }
+            }
+        } 
+    }
+}

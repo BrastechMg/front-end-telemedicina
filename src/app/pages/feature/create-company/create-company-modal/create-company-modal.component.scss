@@ -1,0 +1,18 @@
+.form-row{
+    display: flex;
+    gap: 1rem;
+}
+
+.ng-valid.ng-touched {
+    border-color: #28a745; /* Verde para inputs válidos */
+  }
+  
+.ng-invalid.ng-touched {
+  border-color: #dc3545; /* Vermelho para inputs inválidos */
+}
+
+.ng-invalid{
+  span{
+    color:#dc3545 ;
+  }
+}

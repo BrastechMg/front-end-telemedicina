@@ -1,0 +1,40 @@
+<section class="detailed-benefit__container">
+    <app-fast-loader></app-fast-loader>
+    <div class="detailed-benefit__title-container">
+        <div class="detailed-benefit__title-wrapper">
+            <!-- TODO: DEIXAR LOGO DINÂMICA -->
+            <h1 class="detailed-benefit__title">
+                {{ benefit && benefit.name }}
+            </h1>
+        </div>
+    </div>
+
+
+    <div class="detailed-benefit__cards-wrapper">
+        <div class="detailed-benefit__img">
+            <!-- TODO: DEIXAR BANNER DINÂMICO -->
+            <img src="https://hilab.com.br/wp-content/uploads/2021/04/Telemedicina-Hilab.jpg" alt="">
+        </div>
+        <p class="detailed-benefit__description">
+            {{ benefit && benefit.description }}
+        </p>
+    </div>
+
+    <div class="detailed-benefit__btn-add-wrapper">
+        <button 
+            *ngIf="!isRemoveProduct" 
+            (click)="addBenefit()" 
+            class="detailed-benefit__btn-add"
+        >
+            Adicionar ao produto
+        </button>
+        <button 
+            *ngIf="isRemoveProduct" 
+            (click)="removeBenefit()" 
+            class="detailed-benefit__btn-remove"
+        >
+            Remover do produto
+        </button>
+    </div>
+</section>
+

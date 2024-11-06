@@ -1,0 +1,173 @@
+@import '../../../../../styles';
+
+.detailed-product__container{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    .detailed-product__btn-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        gap: 1rem;
+
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .detailed-product__btn-edit, .detailed-product__btn-delete{
+            max-width: 200px;
+            width: 100%;
+            height: 50px;
+            background-color: $primary-color;
+            border: 1px solid transparent;
+            border-radius: 50px;
+            font-size: 1rem;
+            color: white;
+    
+            &:hover{
+                border: 1px solid  $primary-color;
+                background-color: transparent;
+                color: $primary-color;
+            }
+        }
+
+        .detailed-product__btn-delete{
+            background-color: red;
+            
+            &:hover{
+                border: 1px solid red;
+                background-color: transparent;
+                color: red;
+            }
+        }
+    }
+
+    .detailed-product__title-container{
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+    
+        .detailed-product__title-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            .detailed-product__logo {
+                color: $primary-color;
+                font-size: 3rem;
+            }
+            
+            .detailed-product__title{
+                font-size: 2rem;
+                color: $primary-text;
+            }
+        }  
+
+        .detailed-product__logo-wrapper{
+            width: 100px;
+            height: 100px;
+            background-color: $primary-color;
+            padding: 0.5rem;
+            border-radius: 5px;
+        
+            img{
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    
+    .detailed-product__details-wrapper{
+        width: 100%;
+        min-height: calc(100vh - 410px);
+        padding: 2rem 1rem;
+        gap: 4rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .detailed-product__details{
+            flex-grow: 1;
+
+            .not-benefit{
+                text-align: center;
+                font-weight: 600;
+            }
+
+            .detailed-product__info{
+                display: flex;
+                justify-content: space-between;                
+            }
+        }
+
+        .detailed-product__price{
+            min-width: 100px;
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+            align-items: center;
+            
+            h6{
+                width: 150px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+                font-size: 1.3rem;
+                color: white;
+                background-color: $primary-color;
+            }
+
+            span{
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
+    } 
+    .detailed-product__price-form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    
+        .detailed-product__price-label{
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    
+        .detailed-product__price-input{
+            padding: 1rem;
+            background-color: $primary-color;
+            color: $primary-text;
+            font-size: 1rem;
+            max-width: 300px;
+            width: 100%;
+            height: 60px;
+            border: none;
+            outline: none;
+            border-radius: 50px;
+            cursor: pointer;
+            color: white;
+        
+            &::placeholder{
+                color: white;
+            }
+        }
+    }
+}
+
+.table{
+    max-height: calc(100vh - 410px);
+    overflow-y: auto;
+}

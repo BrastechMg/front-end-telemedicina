@@ -1,0 +1,47 @@
+<section class="login__container">
+  <app-fast-loader></app-fast-loader>
+  <div class="login__wrapper">
+    <img class="login__logo" [src]="logoPath" alt="Logo Cartão Saúde Ouro" />
+    <div class="login__title">Registrar Usuário</div>
+    <form
+      class="login__form"
+      [formGroup]="registerForm"
+      (ngSubmit)="submitRegister()"
+    >
+      <div class="login__input-wrapper">
+        <label for="login">Nome:</label>
+        <input
+          id="login"
+          type="text"
+          formControlName="login"
+          class="login__form-login"
+        />
+      </div>
+      <div class="login__input-wrapper">
+        <label for="password">Senha:</label>
+        <div class="login__inputPassoword-wrapper">
+          <input
+            id="password"
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            class="login__form-login"
+          />
+          <div class="login__showPassword" (click)="toggleShowPassword()">
+            <span class="material-symbols-outlined">
+              {{ showPassword ? "visibility_off" : "visibility" }}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="login__input-wrapper">
+        <label for="role">Opções:</label>
+        <select id="role" formControlName="role" class="login__form-login">
+          <option value="MASTER">MASTER</option>
+          <option value="USER">USER</option>
+          <option value="ADMIN">ADMIN</option>
+        </select>
+      </div>
+      <button type="submit" class="login__button">Registrar</button>
+    </form>
+  </div>
+</section>

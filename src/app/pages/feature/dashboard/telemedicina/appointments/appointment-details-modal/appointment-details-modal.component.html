@@ -1,0 +1,108 @@
+<section class="appointment-details__container">
+    <div class="modal-header">
+        <h1>Detalhes da consulta</h1>
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="activeModal.dismiss('Cross click')"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="appointiment-details__patient-wrapper">
+        <h2>Dados do paciente</h2>
+        <ul>
+            <li>
+                <span>Nome: </span>{{ appointmentDetails?.patientName }}
+            </li>
+            <li>
+                <span>Cpf: </span>{{ appointmentDetails?.requester?.cpf }}
+            </li>
+            <li>
+                <span>Email: </span>{{ appointmentDetails?.requester?.email }}
+            </li>
+        </ul>
+    </div>
+    <div class="appointiment-details__doctor-wrapper">
+        <h2>Dados do médico</h2>
+        <ul>
+            <li>
+                <span>Nome: </span>{{ appointmentDetails?.doctor?.name }}
+            </li>
+            <li>
+                <span>Crm: </span>{{ appointmentDetails?.doctor?.crm }}
+            </li>
+            <li>
+                <span>Especialidade: </span>{{ appointmentDetails?.specialty?.name }}
+            </li>
+        </ul>
+    </div>
+    <div class="appointiment-details__appointment-wrapper">
+        <h2>Dados da consulta</h2>
+        <ul>
+            <li>
+                <span>Data de Solicitação: </span>{{ convertDate(appointmentDetails?.createDate) }}
+            </li>
+            <li>
+                <span>Data de Finalização do Atendimento: </span>{{ convertDate(appointmentDetails?.sellerFinalizedDate) }}
+            </li>
+            <li>
+                <span>Status da consulta: </span> {{ convertStatus(appointmentDetails?.status) }}
+            <li 
+                *ngIf="appointmentDetails?.status == 8 ||
+                appointmentDetails?.status == 10 ||
+                appointmentDetails?.status == 11"
+            >
+                <span>Motivo de Cancelamento: </span>{{ appointmentDetails?.statusReasonOther }}
+            </li>
+            <li>
+                <span>Tipo da consulta: </span>{{ convertAppointmentType(appointmentDetails?.type) }}
+            </li>
+            <li>
+                <span>Principais Sintomas: </span>
+                <p *ngFor="let symptom of appointmentDetails?.medicalrecord?.mainSymptoms">
+                    {{ symptom.name }}, 
+                </p>
+            </li>
+            <li>
+                <span>Hipótese diagnóstica: </span>
+                <p *ngFor="let hypothesis of appointmentDetails?.medicalrecord?.hypothesis?.cids">
+                    {{ hypothesis.name }}, 
+                </p>
+            </li>
+            <li>
+                <span>Desfecho: </span>{{ appointmentDetails?.medicalrecord?.outcome }}
+            </li>
+            <li>
+                <span>Orientação: </span>{{ appointmentDetails?.medicalrecord?.orientation }}
+            </li>
+            <li>
+                <span>Pronto Socorro Necessário? </span>{{ appointmentDetails?.medicalrecord?.isEmergencyRoomReferred ? 'Sim' : 'Não' }}
+            </li>
+            <li>
+                <span>Cuidado Coordenado Indicado? </span>{{ appointmentDetails?.medicalrecord?.isCoordinatedCareReferred ? 'Sim' : 'Não' }}
+            </li>
+            <li *ngIf="appointmentDetails?.medicalrecord?.isCoordinatedCareReferred">
+                <span>Cuidado Coordenado: </span>{{ appointmentDetails?.medicalrecord?.coordinatedCareReferred }}
+            </li>
+            <li>
+                <span>Médico Presencial Necessário? </span>{{ appointmentDetails?.medicalrecord?.isHomeDoctorReferred ? 'Sim' : 'Não' }}
+            </li>
+            <li>
+                <span>Acompanhamento de Enfermagem Necessário? </span>{{ appointmentDetails?.medicalrecord?.needAccompaniment ? 'Sim' : 'Não' }}
+            </li>
+            <li>
+                <span>Acompanhamento Necessário? </span>{{ appointmentDetails?.needAccompaniment ? 'Sim' : 'Não'}}
+            </li>
+        </ul>
+    </div>
+    <div class="appointiment-details__doctor-wrapper">
+        <h2>Receitas e prescrições</h2>
+        <ul>
+            <li *ngFor="let prescription of appointmentDetails?.prescriptions">
+                <span>{{ prescription?.prescriptionType }}: </span><a [href]="prescription?.prescriptionPdfUrl" target="_blank">Ver prescrição</a>              
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+@import '../../../../../styles';
+
+.product-clients__container{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    .product-clients__title-container{
+        display: flex;
+        justify-content: space-between;
+    
+        .product-clients__title-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            .product-clients__logo {
+                color: $primary-color;
+                font-size: 3rem;
+            }
+            
+            .product-clients__title{
+                font-size: 2rem;
+                color: $primary-text;
+            }
+        }  
+    }
+    
+   .product-clients__btn-wrapper{
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-evenly;
+   }
+
+    th{
+        white-space: nowrap;
+    }
+}
+

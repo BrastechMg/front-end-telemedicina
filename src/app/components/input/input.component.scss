@@ -1,0 +1,42 @@
+.default__input{
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-bottom: 2px solid white;
+    width: 100%;
+    outline: none;
+}
+
+.default__input::placeholder{
+    color: white;
+}
+
+//Removing arrows from input number
+.default__input[type=number]::-webkit-outer-spin-button,
+.default__input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.default__input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.input-password {
+  color: #222222;
+  border: none;
+  width: 100%;
+  outline: none;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: .5rem;
+}
+
+//Removing autofill style
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #ffffff;
+}

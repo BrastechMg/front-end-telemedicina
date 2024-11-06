@@ -1,0 +1,87 @@
+<main class="signup__container">
+    <div class="signup__content">
+        <img [src]="logoPath" alt="logo da empresa Cartão Saúde Ouro">
+        <form action="" class="signup__form" [formGroup]="formAddress" (submit)="onSubmit()">
+            <div class="row">
+                <div class="col">
+                    <app-input 
+                        id=""
+                        type="text"
+                        placeholder="CEP"
+                        class="default__input signup__form-input" 
+                        formControlName="cep"
+                        (blur)="getCep(this.cep)"
+                        #cep>
+                    </app-input>
+                </div>
+                <div class="col">
+                    <app-input 
+                    id=""
+                    type="text"
+                    placeholder="Estado"
+                    class="default__input signup__form-input" formControlName="state"
+        >
+                </app-input> 
+                </div>
+                
+            </div> 
+            
+            
+            <app-input 
+                id=""
+                type="text"
+                placeholder="Rua"
+                class="default__input signup__form-input" formControlName="street"
+        >
+            </app-input> 
+        
+           <div class="row">
+                <div class="col">                
+                    <app-input 
+                        type="text"
+                        placeholder="Bairro"
+                        class="default__input signup__form-input" formControlName="neighborhood"
+                       >
+                    </app-input>
+                </div>
+        
+                <div class="col">
+                    <app-input 
+                        id=""
+                        type="text"
+                        placeholder="Número"
+                        class="default__input signup__form-input" formControlName="number"
+                       >
+                    </app-input>
+            </div>
+           </div>
+        
+           <div class="row">                               
+               <div class="col">
+                    <app-input 
+                        id=""
+                        type="text"
+                        placeholder="Cidade"
+                        class="default__input signup__form-input" formControlName="city"
+                        >
+                    </app-input> 
+                </div>
+        
+               <div class="col">
+                   <app-input 
+                       id=""
+                       type="text"
+                       placeholder="Complemento"
+                       class="default__input signup__form-input" formControlName="complement"
+                       >
+                   </app-input> 
+               </div>
+           </div>
+           <app-button
+           type="submit"
+           [label]="btnText"
+           [class]="'btn primary-btn'"
+           ></app-button>
+        </form> 
+    </div>
+</main>

@@ -1,0 +1,51 @@
+<section class="product-settings__container">
+    <div class="product-settings__title-container">
+        <div class="product-settings__title-wrapper">
+            <h1 class="product-settings__title">
+                Configurações {{ companyProduct && companyProduct.name }}
+            </h1>
+        </div>
+    </div>
+
+    <div class="product-settings__cards-wrapper">
+        <app-button
+            class="fancy-button"
+            type="button"
+            [label]="'Configurar benefícios'"
+            [value]="'Configurar benefícios'"
+            (click)="router.navigate(['feature/company/edit/product-benefities/'+companyProduct.id])" 
+        >
+        </app-button>
+        <app-button
+            class="fancy-button"
+            type="button"
+            [label]="'Configurar dashboard'"
+            [value]="'Configurar dashboard'"
+        >
+        </app-button>
+        <app-button
+            class="fancy-button"
+            type="button"
+            [label]="'Configurar cartão'"
+            [value]="'Configurar cartão'"
+            (click)="router.navigate(['feature/company/products/edit/card/'+companyProduct.id])"
+        >
+        </app-button>
+        <app-button
+            class="fancy-button"
+            type="button"
+            [label]="'Configurar Logo / Nome'"
+            [value]="'Configurar Logo / Nome'"
+            (click)="router.navigate(['feature/company/products/edit/product/'+companyProduct.id])" 
+        >
+        </app-button>
+        <app-button
+            class="fancy-button"
+            type="button"
+            [label]="'Configurar Serviços Utilizados'"
+            [value]="'Configurar Serviços Utilizados'"
+            (click)="router.navigate(['feature/company/products/'+companyProduct.id+'/config-services'])" 
+        >
+        </app-button>
+    </div> 
+</section>

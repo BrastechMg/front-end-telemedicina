@@ -1,0 +1,253 @@
+@import '../../../../../styles';
+
+.create-edit-card__container{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    .create-edit-card__btn-save-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem;
+
+        .create-edit-card__btn-save{
+            max-width: 150px;
+            width: 100%;
+            height: 50px;
+            background-color: $primary-color;
+            border: 1px solid transparent;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            color: white;
+    
+            &:hover{
+                border: 1px solid  $primary-color;
+                background-color: transparent;
+                color: $primary-color;
+            }
+        }
+    }
+
+    .create-edit-card__title-container{
+        display: flex;
+        justify-content: space-between;
+    
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .create-edit-card__title-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            .create-edit-card__logo {
+                color: $primary-color;
+                font-size: 3rem;
+            }
+            
+            .create-edit-card__title{
+                font-size: 2rem;
+                color: $primary-text;
+            }
+        }  
+    }
+    
+    .create-edit-card__wrapper{
+        width: 100%;
+        min-height: calc(100vh - 270px);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        .create-edit-card__card-wrapper{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 350px;
+            min-width: 200px;
+            width: 100%;
+
+            label{
+                padding-top: 1rem;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: $primary-color;
+                cursor: pointer;
+            }
+
+            input{
+                display: none;
+            }
+
+            .create-edit-card__card{
+                border-radius: 10px;
+                max-width: 350px;
+                max-height: 230px;
+                height: 100%;
+                width: 100%;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 240px;
+    height: 154px;
+    perspective: 1000px;
+    color: white;
+  }
+  
+  .heading_8264 {
+    position: absolute;
+    letter-spacing: .2em;
+    font-size: 0.5em;
+    top: 2em;
+    left: 18.6em;
+  }
+  
+  .logo {
+    width: 40px;
+    position: absolute;
+    top: 6.7em;
+    left: 11.7em;
+  }
+  
+  .chip {
+    position: absolute;
+    top: 2.3em;
+    left: 1.5em;
+  }
+  
+  .contactless {
+    position: absolute;
+    top: 3.5em;
+    left: 12.4em;
+  }
+  
+  .number {
+    position: absolute;
+    font-weight: bold;
+    font-size: .6em;
+    top: 8.3em;
+    left: 1.6em;
+  }
+  
+  .valid_thru {
+    position: absolute;
+    font-weight: bold;
+    top: 635.8em;
+    font-size: .01em;
+    left: 140.3em;
+  }
+  
+  .date_8264 {
+    position: absolute;
+    font-weight: bold;
+    font-size: 0.5em;
+    top: 13.6em;
+    left: 3.2em;
+  }
+  
+  .name {
+    position: absolute;
+    font-weight: bold;
+    font-size: 0.5em;
+    top: 16.1em;
+    left: 2em;
+  }
+  
+  .strip {
+    position: absolute;
+    background-color: $primary-color;
+    width: 15em;
+    height: 1.5em;
+    top: 2.4em;
+    background: repeating-linear-gradient(
+      45deg,
+      #303030,
+      #303030 10px,
+      #202020 10px,
+      #202020 20px
+    );
+  }
+  
+  .mstrip {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 8em;
+    height: 0.8em;
+    top: 5em;
+    left: .8em;
+    border-radius: 2.5px;
+  }
+  
+  .sstrip {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 4.1em;
+    height: 0.8em;
+    top: 5em;
+    left: 10em;
+    border-radius: 2.5px;
+  }
+  
+  .code {
+    font-weight: bold;
+    text-align: center;
+    margin: .2em;
+    color: black;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    box-shadow: 
+    inset -20px 50px 70px 30px rgba(3, 3, 0, 0.445),
+    inset -20px 10px 70px 30px rgba(3, 3, 0, 0.445),
+    inset 80px 10px 70px 50px rgba(3, 3, 0, 0.445),
+    inset 20px -30px 20px 30px rgba(5, 241, 25, 0.288),
+    rgba(0, 0, 0, 0.4) 0px 2px 2px, 
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+  }
+  
+  .flip-card-front {
+    background-color: $primary-color;
+  }
+  
+  .flip-card-back {
+    background-color: $primary-color;
+    transform: rotateY(180deg);
+  }

@@ -1,0 +1,222 @@
+@import '../../../../styles';
+
+.company-account__container{
+    padding: 1rem;
+
+    .company-account__title-wrapper{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        
+        .company-account__title{
+            font-size: 2rem;
+            color: $primary-text;
+        }
+    
+        .company-account__logo-wrapper{
+            width: 110px;
+            height: 110px;
+            background-color: var(--primary-color);
+            padding: 0.5rem;
+            border-radius: 5px;
+        
+            img{
+                object-fit: contain;
+                width: 90%;
+                height: 90%;
+            }
+
+            .company-account__logo-edit {
+                display: flex;
+                justify-content: flex-end;
+    
+                .company-account__logo-edit-input {
+                    display: none;
+                }
+                
+                .material-symbols-outlined{
+                    background-color: white;
+                    border: 1px solid black;
+                    border-radius: 2rem;
+                    cursor: pointer;
+                }
+            }
+        }   
+    }  
+
+    .company-account__details-wrapper{
+        width: 100%;
+        
+        .company-account__list{
+            padding: 0;
+            margin-top: 1rem;
+            border-radius: 5px;
+            border: 1px solid lightgray;
+            list-style-type: none;
+            
+            .company-account__list-item{
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                border-bottom: 1px solid lightgray;
+                
+                &:last-child{
+                    border: none;
+                }
+                
+                h2{
+                    margin-top: 1rem;
+                    font-size: 1.3rem;  
+                }
+    
+                h3{
+                    font-size: 1rem;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .company-account__white-label-wrapper{
+        width: 100%;
+        padding: 1rem;
+        display: grid;
+
+        h2{
+            font-size: 1.3rem;
+        }
+
+        .company-account__white-label-settings{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            .white-label__color-card{
+                background: white;
+                width: 10rem;
+                box-shadow: 1em 1em 1em rgba(0, 0, 0, .1);
+                display: flex;
+                flex-direction: column;
+            
+                input{
+                    appearance: none;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    height: 8rem;
+                    padding: 0;
+                    width: 10rem;
+
+                    &::-webkit-color-swatch{
+                        border: 0;
+                        border-radius: 0;
+                      }
+                      
+                      &::-moz-color-swatch,
+                      &::-moz-focus-inner{
+                        border: 0;
+                      }
+                  }
+                  
+                  *:focus{
+                    border-radius: 0;
+                    outline: none;
+                  }
+            
+                .info{
+                    padding: .5rem;
+            
+                    h1{
+                        margin: 0;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                      }
+                      
+                      h2{
+                        font-size: .8rem;
+                        font-weight: normal;
+                        margin: 0;
+                      }
+                  }
+              }
+        }
+
+        .white-label-preview-title{
+            margin: 1rem auto;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+    
+        .white-label-preview-container{
+            max-width: 300px;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            border-radius: 5px;
+            position: relative;
+            margin: 1rem auto;
+        
+            @media screen and (max-width: $third-breakpoint) {
+                max-width: 250px;
+                height: 153px;
+            }
+        
+            .laptop{
+                position: absolute;
+                top: -23px;
+                left: -65px;
+                max-width: 445px;
+        
+                @media screen and (max-width: $third-breakpoint) {
+                    max-width: 350px;
+                    top: -18px;
+                    left: -53px;
+                }
+            }
+        
+            .white-label-preview__sidebar{
+                max-width: 100px;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem;
+                background-color: $primary-color;
+        
+                .white-label-preview__logo{
+                    width: 90%;
+                }
+                
+                span{
+                    font-size: .8rem;
+                    cursor: default;
+                    z-index: 2;
+                    color: white;
+    
+                    &:hover{
+                        color: $secondary-color;
+                    }
+                }
+            }
+        
+            .white-label-preview__dashboard{
+                padding: 0.5rem;
+        
+                span{
+                    font-weight: 500;
+                }
+            }
+        }
+        .btn-primary{
+            margin-top: 1rem;
+            max-width: 300px;
+            width: 100%;
+            justify-self: center;
+        }
+    }
+}

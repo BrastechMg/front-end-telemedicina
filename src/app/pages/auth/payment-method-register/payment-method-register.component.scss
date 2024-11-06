@@ -1,0 +1,53 @@
+@import '../../../../styles.scss';
+
+.payment__container {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    background-color: $primary-color;
+    
+    .payment__container-wrap {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+    .payment__form, .payment__form-form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3rem;
+        
+        .payment__form-title {
+            font-size: 1.5rem;
+            color: $secondary-color;
+        }
+        
+        .payment__form-paragraph {
+        color: $secondary-color;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 5rem;
+            justify-content: space-between;
+
+            @media screen and (max-width:768px){
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        .payment__form-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @media screen and (max-width:768px){
+            gap: 2rem;
+        }
+    }
+
+}

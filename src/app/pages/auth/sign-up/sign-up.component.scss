@@ -1,0 +1,85 @@
+@import 'src/styles';
+
+//common styles
+.signup__container, .signup__form, .signup__content, .input-radio, 
+.signup__form-input-section, .input-select, .form__radio  {
+    display: flex;
+}
+
+.signup__container, .signup__form, .signup__content,
+.input-radio, .signup__form-input-section {
+    align-items: center;
+}
+
+//particular styles
+.signup__container {
+    background-color: $primary-color;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.signup__form {
+    // width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+
+    .rol-colunm {
+        padding-left: 0;
+    }
+}
+
+.signup__content {
+    flex-direction: column;
+    width: 40%;
+}
+
+.signup__content-form {
+    width: 60%;
+}
+
+.signup__title {
+    color: $secondary-color;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.signup__form-input {
+    width: 100%;
+}
+
+.input-radio {
+    color: #fff;
+    gap: 0.5rem;
+}
+
+.input-radio label {
+    margin-bottom: .1rem;
+}
+
+p {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: .7rem;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.strong-text {
+    color: $secondary-color;
+}
+
+.text-color {
+    color: #fff;
+}
+
+.signup__form-input-section {
+    flex-direction: row;
+}
+
+.form__radio {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+}

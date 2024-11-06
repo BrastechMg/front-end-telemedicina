@@ -1,0 +1,9 @@
+<div (click)="router.navigate([path])" class="card" *ngIf="!isModal">
+    <div class="card-front">
+      <img src="assets/products/{{ name }}/card-cover.jpg" [alt]="'Logo do benefício '+name">
+    </div>
+    <div class="card-back">
+      <span class="title">{{ name }}</span>
+      <p class="description">{{ description }}</p>
+    </div>
+</div>

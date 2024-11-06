@@ -1,0 +1,124 @@
+
+<section class="company-contact__container">
+    <div class="company-contact__wrapper">
+        <img class="company-contact__logo" src="assets\logo-saude-ouro.png" alt="Logo Cartão Saúde Ouro">
+        <h1 class="company-contact__title">Olá, verificamos que você ainda não possui a nossa solução. 
+            <span class="material-symbols-outlined">sentiment_dissatisfied</span>
+            <br>
+            Insira seus dados para entrarmos em contato!
+        </h1>
+
+        <form class="company-contact__form" [formGroup]="companyContactForm" (ngSubmit)="onSubmit()">
+            <div class="company-contact-form-two-col">
+                <app-input
+                    [class]="'default__input'"
+                    placeholder="Seu nome"
+                    formControlName="name"
+                    [type]="'text'"
+                    [errorMessage]="errorMessage ? errorMessage : null"
+                ></app-input>
+                <div  class="company-contact__select-wrapper" >
+                    <select 
+                        class="company-contact__select" 
+                        aria-label=".form-select-lg example"
+                        formControlName="position"
+                    >
+                        <option value="" selected disabled>Seu cargo</option>
+                        <option value="CEO">CEO</option>
+                        <option value="Presidente">Presidente</option>
+                        <option value="Diretor">Diretor</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Coordenador ou supervisor">Coordenador ou supervisor</option>
+                        <option value="Outros">Outros</option>
+                    </select>  
+                    <small class="error text-danger" *ngIf="errorMessage">{{ errorMessage }}</small>
+                </div>
+            </div>
+           
+            <div class="company-contact-form-two-col">
+                <app-input
+                    [class]="'default__input'"
+                    placeholder="Seu celular"
+                    formControlName="phoneNumber"
+                    [type]="'text'"
+                    [errorMessage]="errorMessage ? errorMessage : null"
+                    mask="(00) 00000-0000"
+                ></app-input>
+                <app-input
+                    [class]="'default__input'"
+                    placeholder="Seu e-mail corporativo"
+                    formControlName="email"
+                    [type]="'email'"
+                    [errorMessage]="errorMessage ? errorMessage : null"
+                ></app-input>
+            </div>
+            
+            <div class="company-contact-form-two-col">
+                <app-input
+                    [class]="'default__input'"
+                    placeholder="Nome da sua empresa"
+                    formControlName="companyName"
+                    [type]="'text'"
+                    [errorMessage]="errorMessage ? errorMessage : null"
+                ></app-input>
+                <app-input
+                    [class]="'default__input'"
+                    placeholder="CNPJ da sua empresa"
+                    formControlName="cnpj"
+                    [type]="'text'"
+                    mask="00.000.000/0000-00"
+                    [errorMessage]="errorMessage ? errorMessage : null"
+                ></app-input>
+            </div>
+
+            <div class="company-contact__select-wrapper">
+                <select 
+                    id="amountWorkers"
+                    class="company-contact__select" 
+                    aria-label=".form-select-lg example"
+                    formControlName="amountWorkers"
+                >
+                    <option value="" selected disabled>Quantidade de funcionários</option>
+                    <option selected value="1 a 500">De 1 a 500 funcionários</option>
+                    <option value="501 a 1.000">De 501 a 1.000 funcionários</option>
+                    <option value="1.001 a 5.000">De 1.001 a 5.000 funcionários</option>
+                    <option value="5.001 a 10.000">De 5.001 a 10.000 funcionários</option>
+                    <option value="10.001 a 50.000">De 10.001 a 50.000 funcionários</option>
+                    <option value="50.001 a 100.000">De 50.001 a 100.000 funcionários</option>
+                    <option value="100.000">Acima de 100.000 funcionários</option>
+                </select>
+                <small class="error text-danger" *ngIf="errorMessage">{{ errorMessage }}</small>
+            </div>
+            
+            <select 
+                class="company-contact__select" 
+                aria-label=".form-select-lg example"
+                formControlName="meet"
+            >
+                <option value="" selected disabled>Como nos conheceu?</option>
+                <option value="Linkedin">Linkedin</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Youtube">Youtube</option>
+                <option value="Google">Google</option>
+                <option value="Indicação de amigos">Indicação de amigos</option>
+                <option value="Landing page">Landing page</option>
+                <option value="Outro">Outro</option>
+            </select>
+
+            <label class="company-contact__form-message-label" for="exampleFormControlTextarea1">
+                Mensagem
+                <textarea formControlName="message" class="company-contact__form-textarea" id="exampleFormControlTextarea1" rows="2"></textarea>
+            </label>
+            
+
+            <app-button
+                type="submit"
+                label="ENVIAR"
+                [class]="'btn primary-btn'"  
+            >
+            </app-button>
+        </form>        
+    </div>
+</section>

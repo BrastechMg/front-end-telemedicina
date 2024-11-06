@@ -1,0 +1,44 @@
+@import 'src/styles';
+
+//common styles
+.signup__container, .signup__form, .signup__content{
+    display: flex;
+}
+
+.signup__container, .signup__form, .signup__content,
+.signup__form-input-section {
+    align-items: center;
+}
+
+//particular styles
+.signup__container {
+    background-color: $primary-color;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.signup__form {
+    // width: 100%;
+    background-color: transparent;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.signup__content {
+    flex-direction: column;
+}
+
+.signup__form-input {
+    width: 100%;
+}
+
+
+p {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: .7rem;
+    margin-top: 1rem;
+    font-weight: 700;
+}

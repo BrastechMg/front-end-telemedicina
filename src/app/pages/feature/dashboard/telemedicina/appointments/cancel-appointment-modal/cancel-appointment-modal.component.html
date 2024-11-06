@@ -1,0 +1,49 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{ params.title }}</h3>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="cancelForm">
+    <div class="form-group">
+      <label for="cancelReasonextarea">{{ params.message }}</label>
+      <textarea  
+        formControlName="cancelReason"  
+        class="form-control" 
+        id="cancelReasonextarea" 
+        rows="3"
+        [class.is-invalid]="cancelForm.controls['cancelReason'].hasError('required') && isFormSubmited"
+      >
+      </textarea>
+      <span 
+        class="ng-invalid" 
+        *ngIf="cancelForm.controls['cancelReason'].hasError('required') && isFormSubmited 
+        || cancelForm.controls['cancelReason'].hasError('required') && cancelForm.controls['cancelReason'].touched "
+       >
+        Insira um motivo para o cancelamento!
+      </span>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-secondary"
+    (click)="activeModal.dismiss('Cancel click')"
+  >
+    Não Cancelar
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="confirm()"
+  >
+    Cancelar atendimento
+  </button>
+</div>

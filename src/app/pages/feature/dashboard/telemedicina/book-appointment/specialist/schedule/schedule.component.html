@@ -1,0 +1,144 @@
+<main *ngIf="clientData != undefined" class="main__container" >
+    <app-fast-loader></app-fast-loader>
+    <ul class="list-group" *ngIf="schedulePath=='' && scheduleDayAndHour">
+        <ng-container *ngIf="dateObj != []">
+            <li *ngFor="let date of dateObj; index as i" (click)="isCollapsed[i] = !isCollapsed[i]" class="list-group-item d-flex flex-column">
+                <div class="list-group-title-wrapper">
+                    <h4>{{ dayOfWeek[i] }}</h4>
+                    <h4 class="list-title">{{ date.day }}</h4>
+                    <span class="material-symbols-outlined" *ngIf="isCollapsed[i]">
+                        keyboard_arrow_down
+                    </span>
+                    <span class="material-symbols-outlined" *ngIf="!isCollapsed[i]">
+                        keyboard_arrow_up
+                    </span>
+                </div>
+                <div #paymentCollapse="ngbCollapse" [(ngbCollapse)]="isCollapsed[i]">
+                    <div class="paymentCollapse">
+                        <div class="generalistCollapse__dates">
+                            <h4>Escolha um horário</h4>
+                            <div class="generalistCollapse__dates-wrapper">
+                                <app-button
+                                    *ngFor="let uniqueHour of dateObj[i].hour"
+                                    class="fancy-button"
+                                    type="button"
+                                    [label]="uniqueHour"
+                                    [value]="[date.day, uniqueHour]"
+                                    (click)="onConfirmDayAndHour($event)" 
+                                >
+                                </app-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </li>
+        </ng-container>
+        <div class="unavailable" *ngIf="dateObj.length == 0">
+            <span class="material-symbols-outlined">event_busy</span>
+            <h4>Infelizmente não há horários disponíveis!</h4>
+        </div>
+    </ul>
+
+    <div class="list-group" *ngIf="schedulePath=='specialtyScheduleDay' && scheduleSpecialtyInfo">
+        <ng-container *ngIf="dateObj != []">
+            <div class="list-group-item d-flex flex-column" *ngFor="let date of dateObj; index as i">
+                <div class="generalist__content-list" (click)="onConfirmDay(date.day)">
+                    <div class="list-group-title-wrapper">
+                        <h4>{{ dayOfWeek[i] }}</h4>
+                        <h4 class="list-title">{{ date.day }}</h4>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <div class="unavailable" *ngIf="dateObj.length == 0">
+            <span  class="material-symbols-outlined">event_busy</span>
+            <h4>Infelizmente não há horários disponíveis!</h4>
+        </div>
+    </div>
+
+    <div class="list-group">
+        <div class="list-group-item" *ngIf="schedulePath=='specialtyScheduleHour' && SpecialtyDay">
+             <h4>Escolha um horário</h4>
+            <div class="paymentCollapse">
+                <div class="generalistCollapse__dates">
+                    <div class="generalistCollapse__dates-wrapper">
+                        <app-button
+                            *ngFor="let hour of dateObj; index as i"
+                            class="fancy-button"
+                            type="button"
+                            [label]="hour"
+                            [value]="hour"
+                            (click)="onConfirmDayAndHourSpecialty($event)"
+                        >
+                        </app-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="confirm-schedule-container" *ngIf="schedulePath=='confirmSchedule'">
+        <app-fast-loader></app-fast-loader>
+        <div>
+            <p class="confirm-date__paragraph">
+                Olá, <span class="bold-text">{{ clientData.name }}</span>, <br>
+                por favor confirme seus dados e os dados do agendamento!
+            </p>
+        </div>
+
+        <div class="confirm-schedule_wrapper">
+            <h3>Dados do paciente</h3>
+            <div class="confirm-schedule_data">
+                <p class="confirm-date__paragraph-day">
+                    <span class="bold-text">Nome: </span> 
+                    {{ clientData.name }}
+                </p>
+                <p class="confirm-date__paragraph-day">
+                    <span class="bold-text">Telefone: </span> 
+
+                    {{ clientData.phoneNumber }}
+                </p>
+            </div>
+            <h3>Dados da consulta</h3>
+            <div class="confirm-schedule_data">
+                <p class="confirm-date__paragraph-day">
+                    <span class="bold-text">Especialidade: </span> 
+                    {{ specialistName }}
+                </p>
+                <p class="confirm-date__paragraph-day">
+                    <span class="bold-text">Data: </span> 
+                    {{ scheduleObject.day }}
+                </p>
+                <p class="confirm-date__paragraph"> 
+                    <span class="bold-text">Horário: </span>
+                    {{ scheduleObject.hour }}
+                </p>
+            </div>
+        </div>
+        <div>
+            <p class="confirm-date__paragraph">
+                Entre no link com <span class="bold-text">15 minutos</span> de antecedência. 
+                <br>
+                Qualquer intercorrência enviaremos uma mensagem.
+                <br>
+                Estamos a disposição!
+            </p>
+        </div>
+
+        <button (click)="onConfirmSchedule()" class="animated-button">
+            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+              ></path>
+            </svg>
+            <span class="text">Confirmar Agendamento</span>
+            <span class="circle"></span>
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+              ></path>
+            </svg>
+          </button>
+        <span (click)="cancelAppointment()" class="cancel-appointment">Algo de errado? Clique aqui para <span>cancelar</span> o agendamento</span>
+    </section>
+</main>  

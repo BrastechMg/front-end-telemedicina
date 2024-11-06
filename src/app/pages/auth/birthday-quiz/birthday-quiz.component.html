@@ -1,0 +1,61 @@
+<section class="birthday-quiz__container">
+    <div class="birthday-quiz__content">
+        <div class="logo">
+            <img class="default__logo" [src]="logoPath" alt="Logo Cartão Saúde Ouro">
+        </div>
+        <h1 class="default__title">Olá, {{name}}!<br>Seja Bem-Vindo.</h1>
+        <form class="birthday-quiz__buttons">
+            <div [hidden]="!isDayValidation">
+                <h3 class="default__title">Selecione o dia em que você nasceu:</h3>
+                <div class="radio-group">
+                    <div *ngFor="let day of sortedDaysArray">
+                        <input
+                        class="radio-input" name="radio-group" [id]="'radio-day-'+day" type="radio" [value]="day" (change)="selectedDay = $event.target">
+                        <label class="radio-label" [for]="'radio-day-'+day">
+                          {{ day }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div [hidden]="!isMonthValidation">
+                <h3 class="default__title">Selecione o mês em que você nasceu:</h3>
+                <div class="radio-group">
+                    <div *ngFor="let month of sortedMonthsArray">
+                        <input class="radio-input" name="radio-group" [id]="'radio-month-'+month" type="radio" [value]="month" (change)="selectedMonth = $event.target">
+                        <label class="radio-label" [for]="'radio-month-'+month">
+                          {{ month }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div [hidden]="!isYearValidation">
+                <h3 class="default__title">Selecione o ano em que você nasceu:</h3>
+                <div class="radio-group">
+                    <div *ngFor="let year of sortedYearsArray">
+                        <input class="radio-input" name="radio-group" [id]="'radio-year-'+year" type="radio" [value]="year" (change)="selectedYear = $event.target">
+                        <label class="radio-label" [for]="'radio-year-'+year">
+                          {{ year }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <app-button 
+                [hidden]="isYearValidation"
+                class="btn primary-btn"
+                type="button"
+                label="Continuar"
+                (click)="changeValidate()"
+                >  
+            </app-button>
+            <app-button 
+                [hidden]="!isYearValidation"
+                class="btn primary-btn"
+                type="button"
+                label="Validar"
+                (click)="validateDate()"
+                >  
+            </app-button>
+        </form>
+    </div>
+</section>

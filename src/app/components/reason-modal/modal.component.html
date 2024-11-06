@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ params.title }}</h4>
+</div>
+<div class="modal-body">
+  <form [formGroup]="modalForm">
+    <textarea formControlName="reason" type="text" class="text-area-input" rows="4"></textarea>
+  </form>
+  <span 
+    class="text-danger" 
+    *ngIf="modalForm.controls['reason'].hasError('required') && modalForm.controls['reason'].touched"
+    >
+    Insira um motivo para a consulta!
+  </span>
+</div>
+<div class="modal-footer">
+  <button
+    *ngIf="params.cancelBtn"
+    type="button"
+    class="btn btn-secondary"
+    (click)="activeModal.dismiss('Cancel click')"
+  >
+    Cancelar
+  </button>
+  <button
+    *ngIf="params.confirmBtn"
+    type="button"
+    class="btn btn-primary"
+    (click)="confirm()"
+  >
+    {{buttonText}}
+  </button>
+</div>

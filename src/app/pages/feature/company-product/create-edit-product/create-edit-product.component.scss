@@ -1,0 +1,126 @@
+@import '../../../../../styles';
+
+.create-edit-product__container{
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    padding: 1rem;
+
+    .create-edit-product__btn-save-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem;
+
+        .create-edit-product__btn-save{
+            max-width: 150px;
+            width: 100%;
+            height: 50px;
+            background-color: $primary-color;
+            border: 1px solid transparent;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            color: white;
+    
+            &:hover{
+                border: 1px solid  $primary-color;
+                background-color: transparent;
+                color: $primary-color;
+            }
+        }
+    }
+
+    .create-edit-product__title-container{
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .create-edit-product__title-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            .create-edit-product__logo {
+                color: $primary-color;
+                font-size: 3rem;
+            }
+            
+            .create-edit-product__title{
+                font-size: 2rem;
+                color: $primary-text;
+            }
+        }  
+    }
+    
+    .create-edit-product__wrapper{
+        width: 100%;
+        min-height: calc(100vh - 270px);
+        padding: 2rem 1rem;
+        gap: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .create-edit-product__input-wrapper{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h2{
+                font-size: 1.5rem;
+            }
+
+            .create-edit-product__file-label{
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                padding: 1rem;
+                background-color: $primary-color;
+                color: $primary-text;
+                font-size: 1.5rem;
+                max-width: 370px;
+                width: 100%;
+                height: 70px;
+                border-radius: 50px;
+                cursor: pointer;
+                color: white;
+
+                .material-symbols-outlined{
+                    color: $secondary-color;
+                    font-size: 3rem;
+                }
+            }
+
+            .create-edit-product__file-input{
+                display: none;
+            }
+
+            .create-edit-product__name-input{
+                padding: 1rem;
+                background-color: $primary-color;
+                color: $primary-text;
+                font-size: 1.5rem;
+                max-width: 400px;
+                width: 100%;
+                height: 80px;
+                border: none;
+                outline: none;
+                border-radius: 50px;
+                cursor: pointer;
+                color: white;
+
+                &::placeholder{
+                    color: white;
+                }
+              }
+        }
+    } 
+}
+

@@ -1,0 +1,30 @@
+<section class="book-appointment__container" *ngIf="!hasclicked">
+    <div class="book-appointment__title-container">
+        <div class="book-appointment__title-wrapper">
+            <h1 class="book-appointment__title">Agendar Consulta</h1>
+        </div>
+    </div>
+
+    <main class="book-appointment__wrapper">
+        <h3 class="book-appointment-wrapper-title">Selecione o tipo de médico que deseja consultar</h3>
+        <div class="book-appointment__cards-wrapper">
+            <app-button
+                class="fancy-button"
+                type="button"
+                label="Consultar com médico generalista"
+                (click)="router.navigate(['/feature/book/generalist'])"
+            >
+            </app-button>
+            <app-button
+                class="fancy-button"
+                type="button"
+                label="Consultar com médico especialista"
+                (click)="router.navigate(['/feature/book/specialist'])"
+            >
+            </app-button>
+        </div> 
+    </main>
+</section>
+
+
+

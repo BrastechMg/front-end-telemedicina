@@ -1,0 +1,24 @@
+<table class="table table-dark table-striped table-hover">
+  <thead>
+    <tr>
+      <th
+        *ngFor="let column of columnsConfig"
+        style.width="{{ column.width }}rem"
+        [style.color]="column.color"
+      >
+        {{ column.header || column.field }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of data" class="table-row" (click)="onRowClick(row)">
+      <td *ngFor="let column of columnsConfig" [style.color]="column.color">
+        {{ row[column.field] }}
+        <ng-container
+          *ngTemplateOutlet="column.template; context: { $implicit: row }"
+        >
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>

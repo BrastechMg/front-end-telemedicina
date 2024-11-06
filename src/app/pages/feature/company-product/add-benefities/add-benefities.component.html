@@ -1,0 +1,19 @@
+<section class="add-benefities__container">
+    <app-fast-loader></app-fast-loader>
+    <div class="add-benefities__title-container">
+        <div class="add-benefities__title-wrapper">
+            <h1 class="add-benefities__title">{{ pageTitle }}</h1>
+        </div>
+    </div>
+
+    <div class="add-benefities__cards-wrapper">
+        <app-benefit-card *ngFor="let benefit of allBenefits"
+            [benefitLogo]="benefit.logo"
+            [name]="benefit.name"
+            [path]="addBenefitNavigate+benefit.id"
+            [description]="benefit.description"
+        ></app-benefit-card>
+    </div>
+
+</section>
+

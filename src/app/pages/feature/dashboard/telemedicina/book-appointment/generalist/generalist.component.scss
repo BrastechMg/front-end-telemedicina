@@ -1,0 +1,48 @@
+@import '../../../../../../../styles';
+
+.generalist__container{
+    padding: 1rem;
+
+    .generalist__title-container{
+        display: flex;
+        justify-content: space-between;
+    
+        @media screen and (max-width: $third-breakpoint) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+    
+        .generalist__title-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            .generalist__logo {
+                color: $primary-color;
+                font-size: 3rem;
+            }
+            
+            .generalist__title{
+                font-size: 2rem;
+                color: $primary-text;
+            }
+        }  
+    }
+
+    .generalist__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        .generalist-wrapper-title {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .generalist__cards-wrapper{
+            width: 100%;
+        }
+    }
+}

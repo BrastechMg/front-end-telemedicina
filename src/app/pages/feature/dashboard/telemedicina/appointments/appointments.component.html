@@ -1,0 +1,45 @@
+<section class="agendamentos__container">
+    <app-fast-loader></app-fast-loader>
+    <div class="agendamentos__title-container">
+        <div class="agendamentos__title-wrapper">
+            <h1 class="agendamentos__title">{{ pageTitle }}</h1>
+        </div>
+    </div>    
+
+    <section *ngIf="appointmentsList != ''" class="agendamentos__wrapper">
+        <div *ngFor="let appointment of appointmentsList, index as i" class="agendamentos__wrapper-card">
+           
+            <div class="agendamentos__wrapper-card-container">
+                <div class="agendamentos__doctor-container">
+                    <div class="agendamentos__profilePhoto">
+                        <img [src]="appointment?.doctorPhotoUrl ? appointment?.doctorPhotoUrl :'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'" alt="Foto de Perfil">
+                    </div>
+                    <div class="agendamentos__doctor-wrapper">
+                        <h3 class="agendamentos__wrapper-title" >{{appointment?.prefix}}{{appointment?.doctorName}}</h3>
+                        <span>{{appointment?.specialty}}</span>
+                    </div>
+                </div>
+        
+                <div class="agendamentos__data-wrapper">
+                    <h3 class="agendamentos__wrapper-title">{{ getAppointmentDate(i) }}</h3>
+                    <span>{{ getAppointmentHour(i) }}</span>
+                </div>
+            </div>
+            <div class="agendamentos__btn-container">
+                <h3 *ngIf="!isPrescriptionsPage" class="agendamentos__wrapper-title">Clique para entrar na consulta</h3>
+                <h3 *ngIf="isPrescriptionsPage" class="agendamentos__wrapper-title">Clique para ver as receitas/prescrições</h3>
+                <div class="agendamentos__btn-wrapper">               
+                    <button *ngIf="isPrescriptionsPage" class="agendamentos__btn-cancelar btn btn-primary" (click)="openAppointmentDetailsModal(i)">Ver Detalhes</button>
+                    <a *ngIf="!isPrescriptionsPage" class="btn btn-primary" [href]="appointment.videoRoomLink">Entrar na consulta.</a>
+                    <button *ngIf="!isPrescriptionsPage" class="agendamentos__btn-cancelar btn btn-danger" (click)="cancelAppointment(i)">Cancelar Consulta</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section *ngIf="appointmentsList == ''" class="agendamentos__wrapper">
+        <span>Você ainda não tem nenhuma consulta marcada!</span>
+        <span (click)="router.navigate(['/feature/book'])" class="no-appointments-span">Clique aqui para marcar uma consulta!</span>
+    </section>
+</section>
+

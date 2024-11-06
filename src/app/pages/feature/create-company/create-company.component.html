@@ -1,0 +1,64 @@
+<section class="create-company__container">
+    <div class="create-company__title-container">
+        <div class="create-company__title-wrapper">
+            <h1 class="create-company__title">Configurar Empresas</h1>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="openCreateModal()">Criar nova empresa</button>
+    <div class="tab-content table-responsive">
+      <table class="table table-striped table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Cnpj</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Editar Empresa</th>
+            <th scope="col">Deletar Empresa</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Empresa X</td>
+                <td>43704986000193</td>
+                <td>31988888888</td>
+                <td>empresax@mail.com</td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="openUpdateModal()">Editar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="openDeleteModal()">Deletar</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Empresa Y</td>
+                <td>43704986000193</td>
+                <td>31988888888</td>
+                <td>empresay@mail.com</td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="openUpdateModal()">Editar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="openDeleteModal()">Deletar</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Empresa Z</td>
+                <td>43704986000193</td>
+                <td>31988888888</td>
+                <td>empresaz@mail.com</td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="openUpdateModal()">Editar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="openDeleteModal()">Deletar</button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+</section>
